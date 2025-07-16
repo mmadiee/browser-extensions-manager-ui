@@ -1,17 +1,25 @@
 import React, { useState } from "react";
 
-//
-import logoConsolePlus from '../../assets/images/logo-console-plus.svg';
+type ExtensionProps = {
+    id: number;
+    name: string;
+    description: string;
+    logo: string;
+    isActive: boolean;
+}
 
-const ExtensionCard = () => {
-    const [isActive, setIsActive] = useState(false);
+const ExtensionCard: React.FC<ExtensionProps> = ({id, name, description, logo, isActive: initialIsActive }) => {
+    const [isActive, setIsActive] = useState(initialIsActive);
+
+    const logoPath = logo;
+
     return (
         <div className="rounded-2xl bg-neutral-0 shadow-md border border-neutral-200 w-1/4 p-4">
             <div className="flex justify-around mb-10 items-start gap-3">
-                <img src={logoConsolePlus} alt="" />
+                <img src={logoPath} alt={`${name} logo`} className="w-12 h-12"/>
                 <div>
-                    <h1 className="font-bold text-lg mb-1">DevLens</h1>
-                    <p className="text-neutral-600 text-sm">Quickly inspect page layouts and visualize element boundaries</p>
+                    <h1 className="font-bold text-lg mb-1">{name}</h1>
+                    <p className="text-neutral-600 text-sm">{description}</p>
                 </div>
             </div>
             <div className="flex justify-between items-center">
