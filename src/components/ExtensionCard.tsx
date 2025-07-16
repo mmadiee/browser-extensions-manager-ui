@@ -14,7 +14,7 @@ const ExtensionCard: React.FC<ExtensionProps> = ({id, name, description, logo, i
     const logoPath = logo;
 
     return (
-        <div className="rounded-2xl bg-neutral-0 shadow-md border border-neutral-200 w-1/4 p-4">
+        <div className="rounded-2xl bg-neutral-0 shadow-md border border-neutral-200 p-4">
             <div className="flex justify-around mb-10 items-start gap-3">
                 <img src={logoPath} alt={`${name} logo`} className="w-12 h-12"/>
                 <div>
