@@ -10,6 +10,14 @@ const ExtensionsContainer: React.FC = () => {
 
     const [activeFilter, setActiveFilter] = useState('all');
 
+    const handleToggleActive = (id: number) =>{
+        setExtensions(prev =>
+            prev.map(ext => 
+                ext.id === id ? { ...ext, isActive: !ext.isActive } : ext
+            )
+        )
+    }
+
     const filteredExtensions = extensions.filter(extension => {
         if (activeFilter === 'all') return true;
         if (activeFilter === 'active') return extension.isActive;
@@ -30,6 +38,7 @@ const ExtensionsContainer: React.FC = () => {
                             description={extension.description}
                             logo={extension.logo}
                             isActive={extension.isActive}
+                            onToggleActive={handleToggleActive}
                         />
                     ))
                 }
