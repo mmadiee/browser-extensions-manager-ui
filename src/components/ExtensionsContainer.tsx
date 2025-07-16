@@ -8,7 +8,7 @@ const ExtensionsContainer: React.FC = () => {
     const [extensions, setExtensions] = useState(extensionsData);
 
     return (
-        <div className="mx-20 my-8 pb-8">
+        <div className="lg:mx-40 my-8 pb-8">
             <div className="grid lg:grid-cols-3 gap-3">
                 {
                     extensions.map(extension => (
