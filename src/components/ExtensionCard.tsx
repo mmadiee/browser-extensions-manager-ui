@@ -6,10 +6,11 @@ type ExtensionProps = {
     description: string;
     logo: string;
     isActive: boolean;
+    onClickRemove: (id: number) => void;
     onToggleActive: (id: number) => void;
 };
 
-const ExtensionCard: React.FC<ExtensionProps> = ({ id, name, description, logo, isActive, onToggleActive }) => {
+const ExtensionCard: React.FC<ExtensionProps> = ({ id, name, description, logo, isActive, onClickRemove, onToggleActive }) => {
     const logoPath = logo;
 
     return (
@@ -22,7 +23,9 @@ const ExtensionCard: React.FC<ExtensionProps> = ({ id, name, description, logo, 
                 </div>
             </div>
             <div className="flex justify-between items-center mt-auto">
-                <button className="py-1 px-3 bg-neutral-0 text-neutral-800 border border-neutral-400 rounded-full hover:bg-red-700 hover:text-neutral-0 transition duration-200 focus:ring-2 focus:ring-red-500">Remove</button>
+                <button
+                    onClick={() => onClickRemove(id)} 
+                    className="py-1 px-3 bg-neutral-0 text-neutral-800 border border-neutral-400 rounded-full hover:bg-red-700 hover:text-neutral-0 transition duration-200 focus:ring-2 focus:ring-red-500">Remove</button>
                 <button
                     onClick={() => onToggleActive(id)}
                     className={`w-12 h-6 flex items-center rounded-full p-1 transition duration-200 ${isActive ? "bg-red-700" : "bg-neutral-400"}`}
