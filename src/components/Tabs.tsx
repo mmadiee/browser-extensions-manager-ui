@@ -7,9 +7,9 @@ type TabsProps = {
 
 const Tab: React.FC<TabsProps> = ({ activeFilter, setActiveFilter }) => {
     return (
-        <div className="flex justify-between">
-            <h1 className="text-neutral-900 text-3xl font-bold">Extensions List</h1>
-            <div className="flex justify-between">
+        <div className="lg:flex lg:justify-between">
+            <h1 className="text-neutral-900 text-3xl font-bold xs:mb-8 flex justify-center items-center">Extensions List</h1>
+            <div className="flex lg:justify-between justify-center mt-4">
                 <button
                     className={`rounded-full py-2 px-4 mx-1 border border-neutral-300 bg-white shadow-sm text-neutral-900
                         ${activeFilter === 'all' ? 'bg-red-600 text-white' : 'hover:bg-neutral-100 hover:text-neutral-700 hover:shadow-none'}

@@ -26,7 +26,7 @@ const ExtensionsContainer: React.FC = () => {
     })
 
     return (
-        <div className="lg:mx-40 my-8 pb-8">
+        <div className="lg:mx-40 my-8 pb-8 mx-5">
             <Tabs activeFilter={activeFilter} setActiveFilter={setActiveFilter}></Tabs>
             <div className="grid lg:grid-cols-3 gap-3 mt-8">
                 {
