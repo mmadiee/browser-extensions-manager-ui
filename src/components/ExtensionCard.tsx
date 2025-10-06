@@ -14,18 +14,18 @@ const ExtensionCard: React.FC<ExtensionProps> = ({ id, name, description, logo, 
     const logoPath = logo;
 
     return (
-        <div className="rounded-2xl bg-neutral-0 shadow-md border border-neutral-200 p-4 flex flex-col">
+        <div className="rounded-2xl bg-neutral-0 dark:bg-neutral-800 shadow-md border border-neutral-200 dark:border-neutral-700 p-4 flex flex-col transition-colors duration-200">
             <div className="flex justify-around mb-10 items-start gap-3">
                 <img src={logoPath} alt={`${name} logo`} className="w-12 h-12" />
                 <div>
-                    <h1 className="font-bold text-lg mb-1">{name}</h1>
-                    <p className="text-neutral-600 text-sm">{description}</p>
+                    <h1 className="font-bold text-lg mb-1 text-neutral-900 dark:text-neutral-0 transition-colors duration-200">{name}</h1>
+                    <p className="text-neutral-600 dark:text-neutral-300 text-sm transition-colors duration-200">{description}</p>
                 </div>
             </div>
             <div className="flex justify-between items-center mt-auto">
                 <button
                     onClick={() => onClickRemove(id)} 
-                    className="py-1 px-3 bg-neutral-0 text-neutral-800 border border-neutral-400 rounded-full hover:bg-red-700 hover:text-neutral-0 transition duration-200 focus:ring-2 focus:ring-red-500">Remove</button>
+                    className="py-1 px-3 bg-neutral-0 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200 border border-neutral-400 dark:border-neutral-600 rounded-full hover:bg-red-700 hover:text-neutral-0 transition duration-200 focus:ring-2 focus:ring-red-500">Remove</button>
                 <button
                     onClick={() => onToggleActive(id)}
                     className={`w-12 h-6 flex items-center rounded-full p-1 transition duration-200 ${isActive ? "bg-red-700" : "bg-neutral-400"}`}
